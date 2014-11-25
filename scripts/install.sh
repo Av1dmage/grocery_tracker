@@ -19,6 +19,7 @@ fi
 
 # Copy and install the things.
 printf 'Copying files from %s to %s...\n' $LOCAL_PATH $WWW_USEDIR
+sudo rm -rf $WWW_USEDIR*
 sudo cp -r $LOCAL_PATH* $WWW_USEDIR
 
 if [ $? != 0 ]; then

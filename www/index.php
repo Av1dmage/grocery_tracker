@@ -14,6 +14,10 @@
     function addItem() {
       var ul = document.getElementById("itemList");
       var li = document.createElement("li");
+      var txt = document.createElement("b");
+      var span = document.createElement("span");
+
+      txt.innerHTML = "&nbsplabel" + String(window.itemCount);
 
       // Create new input li to append to list.
       var input = document.createElement("input");
@@ -22,7 +26,9 @@
       input.setAttribute("id"  , "item" + String(window.itemCount));
 
       // Append new li to list
-      li.appendChild(input);
+      span.appendChild(input);
+      span.appendChild(txt);
+      li.appendChild(span);
       ul.appendChild(li);
 
       window.itemCount = window.itemCount + 1;

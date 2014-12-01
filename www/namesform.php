@@ -6,12 +6,12 @@
 <?php include "navbar.php";?>
 
 <body>
-<form method="get" action="actions/save_list.php">
+<form method="get" action="actions/update_names.php" method="get">
     <h4>Update Names:</h4>
    <ul id="itemList">
    <?php
      foreach($_GET as $i) {
-       Print("<li>$i</li>\n");
+       Print("<li><input type=text, name='$i'/>&nbspfor upc $i</li>\n");
      }      
    ?>
    </ul>

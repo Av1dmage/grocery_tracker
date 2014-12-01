@@ -30,6 +30,10 @@
   $noname = array();
   foreach($_GET as $i) {
     $upc = mysqli_real_escape_string($conn, $i);
+    if(!preg_match("/^[0-9]{12}$/")) {
+      die("Malformed UPC: '$upc'. Aborting.");
+      revert_changes($timestamp, $conn);
+    }
 
     //Check UPC/Name in database
     $sql = "SELECT * FROM Items WHERE upc='$upc'";
@@ -79,7 +83,7 @@
   if(count($noname) == 0) {
     $url = "../index.php";
   } else {
-    $url = "./update_names.php?";
+    $url = "../namesform.php?";
     $c = 0;
     foreach($noname as $i) {
       if($c != 0) {

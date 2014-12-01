@@ -79,7 +79,7 @@
   if(count($noname) == 0) {
     $url = "../index.php";
   } else {
-    $url = "./update_names.php?";
+    $url = "../namesform.php?";
     $c = 0;
     foreach($noname as $i) {
       if($c != 0) {

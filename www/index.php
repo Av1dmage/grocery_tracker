@@ -30,8 +30,8 @@
 
     window.onload = onLoad;
   </script>
-	
-  
+
+  <?php include 'includes.php';?>
 </head>
 
 <html>
@@ -40,7 +40,7 @@
     include 'navbar.php';
   ?>
   
-  <h3>Grocery List</h3>
+  <h4><b>Enter UPCs:</b></h4>
   <form method="get" action="actions/save_list.php">
      <ul id="itemList">
      </ul>

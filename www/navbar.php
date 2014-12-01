@@ -1,6 +1,4 @@
 <!-- Bootstrap scripts / css -->
-<link href="css/bootstrap.min.css" rel="stylesheet"></link>
-
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">

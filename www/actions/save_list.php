@@ -30,6 +30,10 @@
   $noname = array();
   foreach($_GET as $i) {
     $upc = mysqli_real_escape_string($conn, $i);
+    if(!preg_match("/^[0-9]{12}$/")) {
+      die("Malformed UPC: '$upc'. Aborting.");
+      revert_changes($timestamp, $conn);
+    }
 
     //Check UPC/Name in database
     $sql = "SELECT * FROM Items WHERE upc='$upc'";

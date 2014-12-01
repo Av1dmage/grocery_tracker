@@ -19,7 +19,7 @@ CREATE TABLE Lists(
   /*
   user_id INTEGER,
   */
-  time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  time TIMESTAMP DEFAULT CURRENT_TIMESTAMP UNIQUE,
   /*
   FOREIGN KEY (user_id) REFERENCES Users(user_id)
   PRIMARY KEY (user_id, time)

@@ -1,11 +1,13 @@
 <HTML>
 <head>
-  <?php include 'includes.php';?>
+  <?php include 'static/includes.php';?>
 </head>
 
-<?php include "navbar.php";?>
+<?php include "static/navbar.php";?>
 
 <body>
+
+<div class='jumbotron pad-text'>
 <form method="get" action="actions/update_names.php" method="get">
     <h4>Update Names:</h4>
    <ul id="itemList">
@@ -17,7 +19,8 @@
    </ul>
    <input type="submit" value="Save"/>
 </form>
-</body>
+</div>
+<?php include "static/footer.php";?>
 
-<?php include "footer.php";?>
+</body>
 <HTML>

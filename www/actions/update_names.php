@@ -1,7 +1,7 @@
 <?php
   //Print(json_encode($_GET));
 
-  include "db_info.php";
+  include "../static/db_info.php";
 
   $conn = new mysqli($hostname, $username, $password, $database);
   if ($conn->connect_error) {

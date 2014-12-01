@@ -1,6 +1,6 @@
 <?php
 
-  include "db_info.php";
+  include "../static/db_info.php";
 
   function revert_changes($timestamp, $conn) {
     //Hypothetically reverts changes made to the database if some part of process is unsuccessful.

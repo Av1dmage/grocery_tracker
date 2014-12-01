@@ -1,9 +1,9 @@
 <HTML>
 <head>
-  <?php include 'includes.php';?>
+  <?php include 'static/includes.php';?>
 </head>
 
-<?php include "navbar.php";?>
+<?php include "static/navbar.php";?>
 
 <body>
 <form method="get" action="actions/update_names.php" method="get">
@@ -19,5 +19,5 @@
 </form>
 </body>
 
-<?php include "footer.php";?>
+<?php include "static/footer.php";?>
 <HTML>

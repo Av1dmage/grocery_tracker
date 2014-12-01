@@ -44,13 +44,13 @@
     window.onload = onLoad;
   </script>
 
-  <?php include 'includes.php';?>
+  <?php include 'static/includes.php';?>
 </head>
 
 <html>
 
   <?php
-    include 'navbar.php';
+    include 'static/navbar.php';
   ?>
   
   <h4><b>Enter UPCs:</b></h4>
@@ -62,7 +62,7 @@
   </form>
 
   <?php
-    include 'footer.php';
+    include 'static/footer.php';
   ?>
 
 </html>

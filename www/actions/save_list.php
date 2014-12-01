@@ -30,7 +30,7 @@
   $noname = array();
   foreach($_GET as $i) {
     $upc = mysqli_real_escape_string($conn, $i);
-    if(!preg_match("/^[0-9]{12}$/")) {
+    if(!preg_match('/^\d{12}$/', $upc)) {
       die("Malformed UPC: '$upc'. Aborting.");
       revert_changes($timestamp, $conn);
     }

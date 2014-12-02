@@ -13,7 +13,7 @@
    <ul id="itemList">
    <?php
      foreach($_GET as $i) {
-       Print("<li><input type=text, name='$i'/>&nbspfor upc $i</li>\n");
+       Print("<li><b>$i:</b>&nbsp<input type=text, name='$i'/></li>\n");
      }      
    ?>
    </ul>

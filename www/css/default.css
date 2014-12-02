@@ -2,6 +2,11 @@ body {
   padding-top: 70px;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
 .pad-text {
   padding: 10px;
 }

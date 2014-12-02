@@ -12,7 +12,7 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-      <li><a href="./stats/index.html">Stats</a></li>
+      <li><a href="./stats.php">Stats</a></li>
       <li><a href="./newlist.php">New List</a><li>
       <li><a href="./viewlists.php">View Lists</a><li>
     </ul>

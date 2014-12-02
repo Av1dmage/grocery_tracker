@@ -31,11 +31,18 @@
 
     function updateList() {
       var lists = JSON.parse(json);
+      if( n <= 0) {
+        n = 0;
+      }
+      if( n >= lists.length) {
+        n = lists.length - 1;
+      }
 
       var div = document.getElementById("list");
       div.innerHTML = "";
 
       var title = document.getElementById("listTitle");
+
       title.innerHTML = "List " + String(n) + " (" + String(lists[n]["time"]) + "):";
 
       var ul = document.createElement("ul");
@@ -97,6 +104,7 @@
   ?>
 
   <div class='jumbotron'>
+    <h3>View Lists</h3>
 
     <form>
        <input type='button' onclick="javascript:prevList()" value='<'/>

@@ -13,10 +13,11 @@
     include 'static/navbar.php';
   ?>
   <div class='jumbotron pad-text'>
-  <H3>WELCOME TO GROCERY TRACKER</H3>
+  <H3><b>Welcome to Grocery Tracker</b>&#0153;*</H3>
   <p>
-    We tracks zee groceries. Click 'New List' or 'Stats' to start.
+   We track all of the things.<br/>Select a thing from the bar above to do stuff.
   </p>
+  <h6>* now with more cow power</h6>
   </div>
 
   <?php

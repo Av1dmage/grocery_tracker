@@ -59,9 +59,11 @@
   <body>
 		<?php include 'static/navbar.php'; ?>
 
+                <div class="jumbotron">
     <div id="chart_div"></div>
 
-		<div id="listChart_div"></div>
+		  <div id="listChart_div"></div>
+                </div>
 
 		<?php include 'static/footer.php'; ?>
 

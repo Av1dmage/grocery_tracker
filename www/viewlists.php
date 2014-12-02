@@ -47,11 +47,13 @@
 
       var ul = document.createElement("ul");
       ul.setAttribute("style", "padding-left: 10px;");
+      ul.setAttribute("class", "list-group");
 
       var items = lists[n]["items"];
       for(var i = 0; i < items.length; i++) {
         var li = document.createElement('li');
         li.innerHTML = String(items[i]);
+        li.setAttribute("class", "list-group-item");
         ul.appendChild(li);
       }
 
@@ -104,12 +106,15 @@
   ?>
 
   <div class='jumbotron'>
-    <h3>View Lists</h3>
-
-    <form>
-       <input type='button' onclick="javascript:prevList()" value='<'/>
-       <input type='button' onclick="javascript:nextList()" value='>'/>
-    </form>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3 style="padding-left: 10px;">View Lists</h3>
+        <form style="padding-left: 10px;">
+           <input type='button' onclick="javascript:prevList()" value='<'/>
+           <input type='button' onclick="javascript:nextList()" value='>'/>
+        </form>
+      </div>
+    </div>
     <br/>
     <br/>
     <br/>

@@ -8,10 +8,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./index.php">Grocery Tracker</a>
+      <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+          <img style="max-width:40px; margin-top: -7px;"
+               src="static/logo.png">
+      </a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+      <li><a class="navbar-brand" href="./index.php">Grocery Tracker</a></li>
       <li><a href="./stats.php">Stats</a></li>
       <li><a href="./newlist.php">New List</a><li>
       <li><a href="./viewlists.php">View Lists</a><li>

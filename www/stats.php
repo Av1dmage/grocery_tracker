@@ -25,8 +25,15 @@
 					async: false
 				}).responseText;
 
+				var listJsonData = $.ajax({
+					url: "actions/list_counts.php",
+					dataType: "json",
+					async: false
+				}).responseText;
+
 				var data = new google.visualization.DataTable(jsonData);
-	
+				var listData = new google.visualization.DataTable(listJsonData);
+
         // Set chart options
         var options = {'title':'Bought Items',
                        'width':600,
@@ -35,7 +42,17 @@
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-      }
+     
+				options = {
+					'title':'Number of Items in Lists',
+					'width':600,
+					'height':450
+				};
+
+				var listChart = new google.visualization.PieChart(document.getElementById('listChart_div'));
+				listChart.draw(listData, options);
+
+			}
     </script>
   </head>
 
@@ -43,6 +60,8 @@
 		<?php include 'static/navbar.php'; ?>
 
     <div id="chart_div"></div>
+
+		<div id="listChart_div"></div>
 
 		<?php include 'static/footer.php'; ?>
 

@@ -1,71 +1,70 @@
 <html>
-  <head>
-		<title>Stats</title>
-		<?php include 'static/includes.php';?>
+	<head>
+	<title>Stats</title>
+	<?php include 'static/includes.php';?>
 
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
+	<!--Load the AJAX API-->
+    	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    	
+    	<script type="text/javascript">
+    	
+      		// Load the Visualization API and the piechart package.
+      		google.load('visualization', '1.0', {'packages':['corechart']});
 
-      // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {'packages':['corechart']});
+      		// Set a callback to run when the Google Visualization API is loaded.
+      		google.setOnLoadCallback(drawChart);
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.setOnLoadCallback(drawChart);
+      		// Callback that creates and populates a data table,
+      		// instantiates the pie charts, passes in the data and
+      		// draws it.
+      		function drawChart() {
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
+			var jsonData = $.ajax({
+				url: "actions/item_counts.php",
+				dataType: "json",
+				async: false
+			}).responseText;
 
-				var jsonData = $.ajax({
-					url: "actions/item_counts.php",
-					//data: "q="+num,
-					dataType: "json",
-					async: false
-				}).responseText;
+			var listJsonData = $.ajax({
+				url: "actions/list_counts.php",
+				dataType: "json",
+				async: false
+			}).responseText;
 
-				var listJsonData = $.ajax({
-					url: "actions/list_counts.php",
-					dataType: "json",
-					async: false
-				}).responseText;
+			var data = new google.visualization.DataTable(jsonData);
+			var listData = new google.visualization.DataTable(listJsonData);
+	
+        		var options = {
+        			'title':'Bought Items',
+                	       'width':600,
+                       		'height':450
+        		};
 
-				var data = new google.visualization.DataTable(jsonData);
-				var listData = new google.visualization.DataTable(listJsonData);
-
-        // Set chart options
-        var options = {'title':'Bought Items',
-                       'width':600,
-                       'height':450};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+		 	chart.draw(data, options);
      
-				options = {
-					'title':'Number of Items in Lists',
-					'width':600,
-					'height':450
-				};
+			options = {
+				'title':'Number of Items in Lists',
+				'width':600,
+				'height':450
+			};
 
-				var listChart = new google.visualization.PieChart(document.getElementById('listChart_div'));
-				listChart.draw(listData, options);
+			var listChart = new google.visualization.PieChart(document.getElementById('listChart_div'));
+			listChart.draw(listData, options);
+		}
+    	</script>
+  	</head>
 
-			}
-    </script>
-  </head>
+  	<body>
+	<?php include 'static/navbar.php'; ?>
 
-  <body>
-		<?php include 'static/navbar.php'; ?>
+        <div class="jumbotron">
+		<div id="chart_div"></div>
 
-                <div class="jumbotron">
-    <div id="chart_div"></div>
+		<div id="listChart_div"></div>
+        </div>
 
-		  <div id="listChart_div"></div>
-                </div>
-
-		<?php include 'static/footer.php'; ?>
+	<?php include 'static/footer.php'; ?>
 
 	</body>
 </html>

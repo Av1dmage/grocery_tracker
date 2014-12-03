@@ -17,7 +17,7 @@
   <p>
    We track all of the things.<br/>Select a thing from the bar above to do stuff.
   </p>
-  <h6>* now with more cow power</h6>
+  <h6>* now with more <span style="font-family: 'Comic Sans MS';"><b>Cow Power</b></span></h6>
   </div>
 
   <?php

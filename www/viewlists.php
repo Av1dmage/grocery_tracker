@@ -76,9 +76,9 @@
     }
 
     function httpGetLists(callback) {
-      var url = "http://localhost/grocery_list/actions/get_lists.php";
+      var url = "http://digitalstuff.me/grocery_tracker/actions/get_lists.php";
       var xhr = new XMLHttpRequest();
-      xhr.open("GET", url, true);
+      xhr.open("GET", url, true, 'groceries', 'groceries');
       xhr.onload = function (e) {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {

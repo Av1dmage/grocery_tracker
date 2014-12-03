@@ -90,9 +90,10 @@
         $url = $url."&";
       }
       $url = $url."upc$c=$i";
-      $c = c + 1;
+      $c = $c + 1;
     }
   }
+
 ?>
 <HTML>
 <script type="text/javascript">
